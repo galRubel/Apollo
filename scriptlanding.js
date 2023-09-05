@@ -1,4 +1,6 @@
 document.getElementById("button-login").addEventListener("click", function() {
     
-    window.location.href = "jslogin.html";
+    window.location.href = "login.html";
+
 });
+

@@ -3,21 +3,22 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f4eb; /* color verde */
+    background-color: #f2f2f2; 
     margin: 0;
     font-family: Arial, sans-serif;
   }
   
   .container {
-    background-color: #fff;
+    background-color: #F5F5F5;
     border-radius: 8px;
-    padding: 20px;
+    padding: 120px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   h1 {
+    margin-top: 20px;
     text-align: center;
-    color: #4b6e5d; /* color verde */
+    color: #2f2f2f; /* color verde */
   }
   
   form {
@@ -26,21 +27,25 @@ body {
   }
   
   input {
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #EBEBEB;
     border-radius: 4px;
   }
   
   button {
-    background-color: #4b6e5d; /* Dark Sage Green button color */
-    color: #fff;
+    background-color: #EBEBEB; /* Dark Sage Green button color */
+    color: #916400 ;
     padding: 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 4px  ;
+    
     cursor: pointer;
   }
   
   button:hover {
-    background-color: #5f846b; /* color verde */
+    background-color: #FFA500; /* color verde */
+    border: 1px  solid #FFA500;
+    color: #f2f2f2; /* Dark Sage Green button color */
+
   }
