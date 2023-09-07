@@ -19,13 +19,14 @@
         height: 300px; 
         box-shadow: 0 4px 8px 0 #A09C9C, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         background-color: #EBEBEB;
+        margin-top: 300px;
     }
   
 
 
 h1{
     text-align: center;
-    padding-top:  40px;
+    margin-top:  120px;
 
 }
 h2{
@@ -103,38 +104,29 @@ header {
     border-color: #FFA500;
     color: whitesmoke;
 }
-.container {
-    position: relative;
-    background: #EBEBEB;
-    height: 50vh;
-  }
+
   
   .wave {
-    position: absolute;
+    position: relative;
+    margin-top: 80px;
     height: 70px;
     width: 100%;
-    background: #2c3e50;
+    background: #e8e8e8;
     bottom: 0;
   }
   
   .wave::before, .wave::after {
     content: "";
     display: block;
-    position: absolute;
+    position: relative;
     border-radius: 100% 50%;
   }
   
-  .wave::before {
-    width: 55%;
-    height: 109%;
-    background-color: #fff;
-    right: -1.5%;
-    top: 60%;
-  }
+  
   .wave::after {
     width: 55%;
     height: 100%;
-    background-color: #2c3e50;
+    background-color: #e8e8e8;
     left: -1.5%;
     top: 40%;
   }
