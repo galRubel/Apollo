@@ -4,13 +4,13 @@
 generator client {
   provider = "prisma-client-js"
 }
-
+//bycript 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model Post {
+model username {
   id        Int @id @default(autoincrement())
   edad     String
   v1   String

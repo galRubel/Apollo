@@ -1,14 +1,33 @@
 {
   "dependencies": {
     "@prisma/client": "^3.13.0",
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.0.0",
     "express-session": "1.17",
     "mysql2": "^3.6.1",
-    "passport": "^0.5.2",
+    "passport": "^0.6.0",
     "passport-openidconnect": "^0.1.1"
   },
   "devDependencies": {
-    "prisma": "^3.13.0",
+    "prisma": "^3.15.2",
     "tailwindcss": "^3.0.24"
-  }
+  },
+  "name": "diana",
+  "version": "1.0.0",
+  "main": "jslogin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galRubel/Apollo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/galRubel/Apollo/issues"
+  },
+  "homepage": "https://github.com/galRubel/Apollo#readme",
+  "description": ""
 }

@@ -1,3 +1,4 @@
+
 const loginForm = document.getElementById('loginForm');
 
 loginForm.addEventListener('submit', function (event) {
@@ -6,16 +7,11 @@ loginForm.addEventListener('submit', function (event) {
   const password = document.getElementById('password').value;
   const contraseñaCorrecta = "rootroot";
   const usernameCorrecto = "root";
+  const bcrypt = require("bcrypt")
+  const saltRounds = 10
+  const passwordd = "Admin@123"
+  
+ 
+  });
+ 
 
-  if ((password === contraseñaCorrecta) && (username === usernameCorrecto)) {
-    // si es correcta llevalo al bienvienido
-    window.location.href = "bienvenido.html";
-  } 
-  else {
-    // Psi no es correcta muestra error
-    const errorMessage = document.createElement('p');
-    errorMessage.textContent = "Contraseña invalida.";
-    errorMessage.style.color = "#c00"; // color rojo
-    loginForm.appendChild(errorMessage);
-  }
-});
