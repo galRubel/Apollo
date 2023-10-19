@@ -1,9 +1,13 @@
 {
   "dependencies": {
-    "@prisma/client": "^3.13.0",
+    "@prisma/client": "^3.15.2",
     "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
     "dotenv": "^16.0.0",
+    "express": "^4.18.2",
     "express-session": "1.17",
+    "mongoose": "^7.6.0",
+    "mysql": "^2.18.1",
     "mysql2": "^3.6.1",
     "passport": "^0.6.0",
     "passport-openidconnect": "^0.1.1"
@@ -16,7 +20,7 @@
   "version": "1.0.0",
   "main": "jslogin.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx nodemon backlogin.js"
   },
   "repository": {
     "type": "git",

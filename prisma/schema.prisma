@@ -12,12 +12,24 @@ datasource db {
 
 model username {
   id        Int @id @default(autoincrement())
-  edad     String
-  v1   String
-  v2 String
-  publicado Boolean  @default(false)
+  usuario String
+  password String
+  edad     Int
+  Altura   Int
+  peso Int
+  rinonDebil Boolean
+  dialisis Boolean
+  piedrasRinon Boolean
+  actividadFisica Boolean
+  actividadCigarillo Int
+  promedioCigarillo Int
+  actividadAlchol Int
+  promedioAlchol Int
+  comidasCaseras Int
+  comidaRapida Int
+  comidaLista Int
+  comidaCongelada Int
   creado  DateTime @default(now())
-  actualizado DateTime @updatedAt
 
   @@map("posts")
 }
