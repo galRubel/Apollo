@@ -20,7 +20,7 @@ app.get("/gal", (req, res) => {
   res.send("Hello Gal")
 })
 
-app.post("/registrarse.html", (req, res) => {
+app.post("/registrarse", (req, res) => {
   const username = req.username;
   const pwd = req.password;
   const user = {
