@@ -6,8 +6,8 @@ const app = express();
 const cors = require("cors")
 const port = process.env.PORT || 3000;
 app.use(express.json());
+app.use(cors());
 
-app.use(cors())
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
@@ -21,10 +21,10 @@ app.get("/gal", (req, res) => {
 })
 
 app.post("/registrarse", (req, res) => {
-  const username = req.username;
-  const pwd = req.password;
+  const username = req.body.username;
+  const pwd = req.body.password;
   const user = {
-    "name": username,
+    "username": username,
     "password": pwd,
   }
   console.log(req.body)
