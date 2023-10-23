@@ -23,13 +23,32 @@ app.get("/gal", (req, res) => {
 app.post("/registrarse", (req, res) => {
   const username = req.body.username;
   const pwd = req.body.password;
+  const confPwd = req.body.confirmPassowrd;
   const user = {
     "username": username,
     "password": pwd,
+    "confirmPassowrd": confPwd
   }
-  console.log(req.body)
-  res.send(user)
+  console.log(user);
+  if (confPwd !== pwd) {
+    res.status(404).json({ msg: 'No seas potz' }) 
+  }
+  else {
+    console.log(req.body)
+    res.send(user)
+    const newUser = await prisma.user.create({ 
+      data: { 
+        usuario: username, 
+        password:pwd, 
+        
+      } 
+    });
+
+
+  }
+
 })
+
 
 
 // Start the server and listen on the specified port

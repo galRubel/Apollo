@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const usernameInput = document.getElementById('username');
   const passwordInput = document.getElementById('password');
+  const confrimpasswordInput = document.getElementById('confirmpassword');
   const loginForm = document.getElementById('loginForm');
   const message = document.getElementById('message');
 
@@ -14,10 +15,17 @@ document.addEventListener('DOMContentLoaded', function () {
       body: JSON.stringify({
         username: usernameInput.value,
         password: passwordInput.value,
+        confirmPassowrd: confrimpasswordInput.value
       })
     })
 
     const data = await res.json();
-    console.log(data)
+    if(res.ok){
+      alert("nombre: " + data.username + " apellido: " + data.password)
+      
+
+    } else {
+      alert("fue "+ data.msg)
+    }
   })
 })
