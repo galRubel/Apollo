@@ -6,29 +6,29 @@ generator client {
 }
 //bycript 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-model username {
+model user {
   id        Int @id @default(autoincrement())
   usuario String
   password String
-  edad     Int
-  Altura   Int
-  peso Int
-  rinonDebil Boolean
-  dialisis Boolean
-  piedrasRinon Boolean
-  actividadFisica Boolean
-  actividadCigarillo Int
-  promedioCigarillo Int
-  actividadAlchol Int
-  promedioAlchol Int
-  comidasCaseras Int
-  comidaRapida Int
-  comidaLista Int
-  comidaCongelada Int
+  edad     Int?
+  Altura   Int?
+  peso Int?
+  rinonDebil Boolean?
+  dialisis Boolean?
+  piedrasRinon Boolean?
+  actividadFisica Boolean?
+  actividadCigarillo Int?
+  promedioCigarillo Int?
+  actividadAlchol Int?
+  promedioAlchol Int?
+  comidasCaseras Int?
+  comidaRapida Int?
+  comidaLista Int?
+  comidaCongelada Int?
   creado  DateTime @default(now())
 
   @@map("posts")

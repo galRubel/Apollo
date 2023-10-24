@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const message = document.getElementById('message');
 
   loginForm.addEventListener('submit', async function (event) {
-    event.preventDefault(); // Prevent the form from submitting normally
+    event.preventDefault();
+    console.log("Hola") // Prevent the form from submitting normally
     const res = await fetch("http://localhost:3000/registrarse", {
       method: "POST",
       headers: {

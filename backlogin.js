@@ -20,7 +20,7 @@ app.get("/gal", (req, res) => {
   res.send("Hello Gal")
 })
 
-app.post("/registrarse", (req, res) => {
+app.post("/registrarse", async (req, res) => {
   const username = req.body.username;
   const pwd = req.body.password;
   const confPwd = req.body.confirmPassowrd;
@@ -31,20 +31,18 @@ app.post("/registrarse", (req, res) => {
   }
   console.log(user);
   if (confPwd !== pwd) {
-    res.status(404).json({ msg: 'No seas potz' }) 
+    res.status(404).json({ msg: 'No seas potz' })
   }
   else {
     console.log(req.body)
-    res.send(user)
-    const newUser = await prisma.user.create({ 
-      data: { 
-        usuario: username, 
-        password:pwd, 
-        
-      } 
+    const newUser = await prisma.user.create({
+      data: {
+        usuario: username,
+        password: pwd,
+
+      }
     });
-
-
+    res.json(newUser)
   }
 
 })
