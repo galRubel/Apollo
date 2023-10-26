@@ -4,9 +4,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');
     const loginForm = document.getElementById('loginForm');  
+  
     loginForm.addEventListener('submit', async function (event) {
       event.preventDefault();
+     
       console.log("Hola") // Prevent the form from submitting normally
+    
       const res = await fetch("http://localhost:3000/iniciarsesion", {
         method: "POST",
         headers: {
@@ -19,12 +22,15 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         
       })
+      
       const data = await res.json();
-      if (response.ok) {
-        document.getElementById("message").innerText = "Login successful. Token: " + data.token;
+     
+      if (res.ok) {
+        document.getElementById("message").innerText = "Login exitoso Token: " + data.token;
     } else {
-        document.getElementById("message").innerText = "Login failed. " + data.message;
+        document.getElementById("message").innerText = "Login no exitoso. " + data.message;
     }
+   
     })
   })
   

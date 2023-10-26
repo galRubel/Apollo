@@ -8,18 +8,15 @@ const bcrypt = require("bcrypt")
 const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
+const jwt = require('jsonwebtoken');
 
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
-//AJAX
+
 app.get('/api/hello', (req, res) => {
   res.json({ message: 'Hello, API!' });
 });
-
-app.get("/gal", (req, res) => {
-  res.send("Hello Gal")
-})
 
 app.post("/registrarse", async (req, res) => {
   const username = req.body.username;
@@ -50,22 +47,18 @@ app.post("/registrarse", async (req, res) => {
 app.post("/iniciarsesion", async (req, res) => {
   const username = req.body.username;
   const pwd = req.body.password;
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.array() });
-  }
 
   try {
     const user = await prisma.user.findUnique({ where: { usuario: username } });
 
     if (!user) {
-      return res.status(401).json({ message: 'User not found' });
+      return res.status(401).json({ message: 'Usuaruio no encontrado' });
     }
 
-    const passwordMatch = await bcrypt.compare(password, user.password);
+    const passwordMatch = await compare(password, user.password);
 
     if (!passwordMatch) {
-      return res.status(401).json({ message: 'Incorrect password' });
+      return res.status(401).json({ message: 'Contraseña Incorrecta' });
     }
 
     const token = jwt.sign({ userId: user.id, username: user.username }, JWT_SECRET);
@@ -73,7 +66,7 @@ app.post("/iniciarsesion", async (req, res) => {
     res.json({ token });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Server error' });
+    res.status(400).json({ message: 'Error del servidor' });
   }
 }
 );

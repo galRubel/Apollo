@@ -12,7 +12,7 @@ datasource db {
 
 model user {
   id        Int @id @default(autoincrement())
-  usuario String
+  usuario String @unique
   password String
   edad     Int?
   Altura   Int?
