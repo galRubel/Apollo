@@ -1,5 +1,5 @@
 
-const token = '1342';
+
 document.addEventListener('DOMContentLoaded', function () {
     const usernameInput = document.getElementById('username');
     const passwordInput = document.getElementById('password');

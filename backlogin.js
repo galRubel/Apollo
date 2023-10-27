@@ -9,13 +9,10 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 const jwt = require('jsonwebtoken');
+const JWT_SECRET = '1342';
 
 app.get('/', (req, res) => {
   res.send('Hello, World!');
-});
-
-app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Hello, API!' });
 });
 
 app.post("/registrarse", async (req, res) => {
@@ -55,10 +52,10 @@ app.post("/iniciarsesion", async (req, res) => {
       return res.status(401).json({ message: 'Usuaruio no encontrado' });
     }
 
-    const passwordMatch = await compare(password, user.password);
-
-    if (!passwordMatch) {
+  console.log()
+    if (user.password =! pwd ) {
       return res.status(401).json({ message: 'Contraseña Incorrecta' });
+    
     }
 
     const token = jwt.sign({ userId: user.id, username: user.username }, JWT_SECRET);

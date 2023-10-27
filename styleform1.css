@@ -1,0 +1,29 @@
+body {
+    background-image: url("fondoForm.svg");
+  
+  }
+#pregunta{
+    font-family: 'Raleway';
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    color: honeydew;
+    padding-bottom: 20px;
+    
+  }
+  #input1{
+    align-items: center;
+    vertical-align: bottom;
+  }
+  .buttons{
+    display: flex-end; 
+  }
+
+  #opciones{
+      height: 200px;
+      width: 200px;
+  }
+  .container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */}
