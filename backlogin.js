@@ -51,11 +51,14 @@ app.post("/iniciarsesion", async (req, res) => {
     if (!user) {
       return res.status(401).json({ message: 'Usuaruio no encontrado' });
     }
-
-  console.log()
-    if (user.password =! pwd ) {
+    console.log(user.password)
+    console.log(pwd)
+    const saltRounds = 10; // You can adjust the number of rounds as needed (higher is more secure but slower)
+    const hashedPassword = await bcrypt.hash(pwd, saltRounds)
+    const data = await bcrypt.compare(user.password,hashedPassword);
+    console.log(data);
+    if (!data) {
       return res.status(401).json({ message: 'Contraseña Incorrecta' });
-    
     }
 
     const token = jwt.sign({ userId: user.id, username: user.username }, JWT_SECRET);
