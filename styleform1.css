@@ -2,7 +2,16 @@ body {
     background-image: url("fondoForm.svg");
     display: block;
     align-items: center;
+    padding: 5px;
   }
+ .opciones{
+  font-family: 'Raleway';
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  color: honeydew;
+  padding-bottom: 12px; 
+ }
 .pregunta{
     font-family: 'Raleway';
     font-size: 45px;
@@ -10,36 +19,70 @@ body {
     font-weight: 400;
     color: honeydew;
     padding-bottom: 20px;  
-    align-items: center;
-  }
-  #input1{
-    align-items: center;
-    
-  }
- 
-  
-  .container {
+    text-align: left;
     display: flex;
+    justify-content: start; 
+    margin-left: 10%;
+
+  }
+
+  .input-container {
+    position: relative;
+    margin: 50px auto;
+    width: 200px;
+  }
+  
+  .input-container input[type="text"] {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+  }
+  
+  .input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ccc;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .input-container input[type="text"]:focus ~ .label,
+  .input-container input[type="text"]:valid ~ .label {
+    top: -20px;
+    font-size: 16px;
+    color: #FFA500;
+  }
+  
+  .input-container .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #333;
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+  }
+  
+  .input-container input[type="text"]:focus ~ .underline,
+  .input-container input[type="text"]:valid ~ .underline {
+    transform: scaleX(1);
+  }
+  .sim{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
     
-    justify-content: center; 
-    align-items: flex-end;
-}
-.input {
-  border: 2px solid #e8e8e8;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: #212121;
-  font-size: small;
-  font-weight: bold;
-  text-align: center;
- }
- 
- .input:focus {
-  outline-color: white;
-  background-color: #212121;
-  color: #e8e8e8;
-  box-shadow: 5px 5px #888888;
- }
+  }
+  
+  
+  
 .buttons {
   display: flex;
   align-items: center;
