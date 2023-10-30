@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" type="text/css" href="styleform1.css">
+<script src="form1js.js"></script>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
 </head>
-<body>
-    <div class="container" id="input1">
-      <div class="pregunta">
-        <h2 >¿Estuviste alguna vez en dialisis?</h2>
-      </div>
-      <div class="buttons">
-        <button type="button" id="opciones">SI</button>
-        <button type="button" id="opciones">NO</button>
-    </div>
-    <div class="container">
-        <h2 id="pregunta">¿Estuviste alguna con piedras?</h2>
-        <button type="button"id="opciones">SI</button>
-        <button type="button"id="opciones">NO</button>
-    </div>
 
+<body>
+  <div class="container" id="input1">
+    <h2 class="pregunta">¿Estuviste alguna vez en dialisis?</h2>
+      <div class="toggle-button-cover">
+        <div id="button-3" class="button r">
+          <input class="checkbox" type="checkbox" id="pregunta1">
+          <div class="knobs"></div>
+          <div class="layer"></div>
+        </div>
+      </div>
+  </div>
+  <div class="container">
+    <h2 class="pregunta">¿Estuviste alguna con riñon?</h2>
+    <div class="buttons">
+      <div class="toggle-button-cover">
+        <div id="button-3" class="button r">
+          <input class="checkbox" type="checkbox" id="pregunta1">
+          <div class="knobs"></div>
+          <div class="layer"></div>
     </div>
   </div>
 
+  </div>
+  </div>
+  <div class="container">
+<h2 class="pregunta">¿Estuviste alguna con riñon?</h2>
+<input type="text" name="text" class="input" placeholder="Del 1 al 80">
+</div>
 </body>
-  
-
-
-
 </html>

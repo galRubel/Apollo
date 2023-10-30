@@ -70,7 +70,14 @@ app.post("/iniciarsesion", async (req, res) => {
   }
 }
 );
-
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 7 * 24 * 60 * 60 * 1000, // Set the session to expire in 7 days (adjust as needed)
+  },
+}));
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:3000`);
 });
