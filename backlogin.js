@@ -4,21 +4,16 @@ const prisma = new PrismaClient()
 const express = require('express');
 const app = express();
 const cors = require("cors")
+const bcrypt = require("bcrypt")
 const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
+const jwt = require('jsonwebtoken');
+const JWT_SECRET = '1342';
 
 app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
-//AJAX
-app.get('/api/hello', (req, res) => {
-  res.json({ message: 'Hello, API!' });
-});
-
-app.get("/gal", (req, res) => {
-  res.send("Hello Gal")
-})
 
 app.post("/registrarse", async (req, res) => {
   const username = req.body.username;
@@ -46,10 +41,37 @@ app.post("/registrarse", async (req, res) => {
   }
 
 })
+app.post("/iniciarsesion", async (req, res) => {
+  const username = req.body.username;
+  const pwd = req.body.password;
+
+  try {
+    const user = await prisma.user.findUnique({ where: { usuario: username } });
+
+    if (!user) {
+      return res.status(401).json({ message: 'Usuaruio no encontrado' });
+    }
+    console.log(user.password)
+    console.log(pwd)
+    const saltRounds = 10; // You can adjust the number of rounds as needed (higher is more secure but slower)
+    const hashedPassword = await bcrypt.hash(pwd, saltRounds)
+    const data = await bcrypt.compare(user.password,hashedPassword);
+    console.log(data);
+    if (!data) {
+      return res.status(401).json({ message: 'Contraseña Incorrecta' });
+    }
+
+    const token = jwt.sign({ userId: user.id, username: user.username }, JWT_SECRET);
+
+    res.json({ token });
+  } catch (error) {
+    console.error(error);
+    res.status(400).json({ message: 'Error del servidor' });
+  }
+}
+);
 
 
-
-// Start the server and listen on the specified port
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:3000`);
 });
