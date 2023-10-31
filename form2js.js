@@ -1,19 +1,20 @@
-const rangeLabel = document.querySelector(".custom_range_slider");
-const rangeInput = rangeLabel.children[0];
-
-rangeLabel.insertAdjacentHTML(
-  "beforeend",
-  `<span class="bubble">${rangeInput.value}</span>`
-);
-
-const rangeBubble = rangeLabel.children[1];
-
-rangeInput.addEventListener("input", () => {
-  const { min, max, value } = rangeInput;
-  const total = Number(max) - Number(min);
-  const perc = (Number(value) - Number(min)) / total;
-
-  rangeBubble.style.left = `${perc * 100}%`;
-  rangeBubble.style.transform = `translateX(-${perc * 100}%)`;
-  rangeBubble.textContent = value;
+const inputField = document.getElementById("dia");
+const input = document.getElementById("mes");
+inputField.addEventListener("input", function() {
+    const currentCount = inputField.value.length;
+    const maxLength = 2
+    
+    
+    
+    // Disable input when the character limit is reached (optional)
+    if (currentCount >= maxLength) {
+        inputField.value = inputField.value.slice(0, maxLength);
+    } else {
+        inputField.disabled = false;
+    }
+    if (input >= maxLength) {
+        inputField.value = input.value.slice(0, maxLength);
+    } else {
+        input.disabled = false;
+    }
 });
