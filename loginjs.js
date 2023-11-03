@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const data = await res.json();
      
       if (res.ok) {
-        document.getElementById("message").innerText = "Login exitoso Token: " + data.token;
+        document.getElementById("message").innerText = "Login exitoso Token: " + data.token + "el otro es + " + data.authToken;
+        window.location.href = "file:///C:/Users/47866632/Downloads/Diana/form1.html";
     } else {
         document.getElementById("message").innerText = "Login no exitoso. " + data.message;
     }
