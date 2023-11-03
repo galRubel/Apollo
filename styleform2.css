@@ -1,0 +1,94 @@
+.input {
+    max-width: 190px;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    margin: 5px;
+    transition: .5s;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    
+  }
+  .pregunta{
+    font-family: 'Raleway';
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    color: honeydew;
+    padding-bottom: 20px;  
+    text-align: left;
+    display: flex;
+    justify-content: start; 
+    margin-left: 10%;
+
+  }
+  body{
+margin: 5%;
+background-color: gray;
+position: relative;
+display: block;
+align-items: center;
+justify-content: center;
+  }
+  input:focus {
+    width: 150px;
+    transform: rotate(0);
+  }
+  #peso {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+  }
+  
+ #peso:hover,
+  #peso:focus {
+    border: 2px solid #ffa500;
+    box-shadow: 0px 0px 0px 7px rgb(145, 100, 0, 20%);
+    background-color: white;
+  }
+  .checkmark {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.4s;
+    overflow: hidden;
+    cursor: pointer;
+   }
+   
+   #check:checked ~ .checkmark {
+    background-color: #ffa500;
+   }
+   
+   .checkmark::after {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(40deg) scale(10);
+    opacity: 0;
+    transition: all 0.4s;
+   }
+   
+   #check:checked ~ .checkmark::after {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotateZ(40deg) scale(1);
+   }
+  
