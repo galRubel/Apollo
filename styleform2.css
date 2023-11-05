@@ -27,6 +27,10 @@
     margin-left: 10%;
 
   }
+  .input:invalid {
+    animation:forwards;
+    color: red;
+  }
   body{
 margin: 5%;
 background-color: gray;

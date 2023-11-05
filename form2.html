@@ -11,23 +11,23 @@
 <body>
     <div class="container">
         <h2 class="pregunta">¿Cuándo naciste?</h2>
-        <input maxlength="2" type="text" name="text" class="input" id="dia">
-        <input maxlength="2" type="text" name="text" class="input" id="mes">
-        <input maxlength="4" type="text" name="text" class="input" id="dia">
+        <input pattern="\d+" maxlength="2" type="text" name="text" class="input" id="dia">
+        <input pattern="\d+"  maxlength="2" type="text" name="text" class="input" id="mes">
+        <input  pattern="\d+" maxlength="4" type="text" name="text" class="input" id="dia">
 </div>
 <div>
     <h2 class="pregunta">¿Cuánto pesas en kilogtmaos?</h2>
-    <input class="input" placeholder="En Kg" id="peso">
+    <input pattern="\d+"  class="input" placeholder="En Kg" id="peso">
     
 </div>
 <div>
     <h2 class="pregunta">¿Cuánto medis en centimetros?</h2>
-    <input class="input" placeholder="En Cm" id="peso">
+    <input pattern="\d+" class="input" placeholder="En Cm" id="peso">
     
 </div>
 <div>
     <label class="checkbox-wrapper">
-        <input  type="checkbox" id="check" hidden="">
+        <input pattern="\d+" type="checkbox" id="check" hidden="">
         <label for="check" class="checkmark"></label>
         </label>
 </div>

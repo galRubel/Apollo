@@ -20,7 +20,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 130px;
+  margin: auto; 
+
 
  }
 .pregunta{
@@ -32,10 +33,12 @@ body {
     padding-bottom: 20px;  
     text-align: left;
     display: flex;
-    justify-content: start; 
+    justify-content: center; 
     margin-left: 100px;
-    margin-top: 100px ;
-
+    margin-top: 20px ;
+    margin: auto;
+    padding-bottom: 5px 
+     ;
   }
 
   .input-container {
@@ -107,6 +110,7 @@ body {
   width: 200px;
   height: 140px;
   box-sizing: border-box;
+  padding: 10px;
 }
 
 .button-cover {
@@ -208,6 +212,50 @@ body {
   background-color: #FFA500;
 }
 
-#button-3 .checkbox:checked ~ .layer {
-  background-color: #fcebeb;
+
+.input {
+  max-width: 190px;
+  width: 40px;
+  height: 40px;
+  outline: none;
+  margin: 5px;
+  transition: .5s;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  
 }
+
+.input:invalid {
+  animation:forwards;
+  color: red;
+}
+
+input:focus {
+  width: 150px;
+  transform: rotate(0);
+}
+#peso {
+  border: 2px solid transparent;
+  width: 15em;
+  height: 2.5em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #F3F3F3;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+#peso:hover,
+#peso:focus {
+  border: 2px solid #ffa500;
+  box-shadow: 0px 0px 0px 7px rgb(145, 100, 0, 20%);
+  background-color: white;
+}
+
+
