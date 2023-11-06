@@ -41,7 +41,9 @@ app.post("/registrarse", async (req, res) => {
     res.cookie('auth_token', authToken, {
       maxAge: 10800, // 3 horas 
       httpOnly: true,
+    
     });
+
     res.json(newUser, authToken)
   }
 
@@ -66,13 +68,14 @@ app.post("/iniciarsesion", async (req, res) => {
       return res.status(401).json({ message: 'Contraseña Incorrecta' });
     }
 
-    const token = jwt.sign({ userId: user.id, username: user.username }, JWT_SECRET);
-    const authToken = generateAuthToken();
+   
+    const authToken =jwt.sign({ userId: user.id, username: user.username }, JWT_SECRET);
     res.cookie('auth_token', authToken, {
       maxAge: 10800, // 30 days
       httpOnly: true,
     });
-    res.json({ token,authToken })
+    console.log(authToken);
+    res.json({authToken })
   } catch (error) {
     console.error(error);
     res.status(400).json({ message: 'Error del servidor' });
@@ -82,11 +85,10 @@ app.post("/iniciarsesion", async (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:3000`);
+  console.log(`Servernmjh is running on http://localhost:3000`);
 });
 function generateAuthToken() {
-  return Math.random().toString(36).substring(7);
-}
+  return ;}
 
 
 
