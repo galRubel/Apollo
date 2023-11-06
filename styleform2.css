@@ -3,7 +3,7 @@
     width: 40px;
     height: 40px;
     outline: none;
-    margin: 5px;
+    margin: auto; 
     transition: .5s;
     border: none;
     border-radius: 10px;
@@ -14,6 +14,17 @@
     text-overflow: ellipsis;
     
   }
+  #caja{
+    background-color:#F6B044 ;
+    width: 1000px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto; 
+    border-radius: 13px;
+   }
   .pregunta{
     font-family: 'Raleway';
     font-size: 45px;
@@ -23,8 +34,9 @@
     padding-bottom: 20px;  
     text-align: left;
     display: flex;
+  flex-direction: column;
     justify-content: start; 
-    margin-left: 10%;
+    margin: auto; 
 
   }
   .input:invalid {
@@ -32,10 +44,10 @@
     color: red;
   }
   body{
-margin: 5%;
+    margin: auto; 
 background-color: gray;
 position: relative;
-display: block;
+display: flex;
 align-items: center;
 justify-content: center;
   }
