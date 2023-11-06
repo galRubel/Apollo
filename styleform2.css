@@ -14,30 +14,46 @@
     text-overflow: ellipsis;
     
   }
+  body{
+    padding-top: 100px;
+   
+  }
   #caja{
     background-color:#F6B044 ;
     width: 1000px;
-    height: 1000px;
+    height: 100vh;;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: auto; 
-    border-radius: 13px;
+    justify-content: start;
+    margin-top: 80px auto; 
+    border-radius: 20px;
+    padding-top: 40px;
    }
   .pregunta{
     font-family: 'Raleway';
     font-size: 45px;
     font-style: normal;
     font-weight: 400;
-    color: honeydew;
+    color: #F3F3F3;
     padding-bottom: 20px;  
-    text-align: left;
-    display: flex;
-  flex-direction: column;
-    justify-content: start; 
-    margin: auto; 
+    display: flex; 
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    align-items: start;
 
+  }
+  #peso{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .fecha{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .input:invalid {
     animation:forwards;
