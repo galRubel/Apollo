@@ -1,7 +1,7 @@
 body {
   background-image: url("fondoForm.svg");
-    display: block;
     align-items: center;
+    padding-top: 15px;
   }
  .opciones{
 
@@ -21,7 +21,7 @@ body {
   justify-content: center;
   margin-left:auto; 
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 10px;
   border-radius: 13px;
  }
 .pregunta{
@@ -33,7 +33,6 @@ body {
     color: #F3F3F3;
     padding-bottom: 20px;  
     display: flex;
-    margin-top: 3px auto;
     margin-bottom: 3px auto;
     margin-left: 200px;
    
