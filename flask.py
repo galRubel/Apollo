@@ -66,4 +66,4 @@ if __name__ == "__main__":
     #pip install -r requirments.txt
     #python -m venv venv
     #./activate
-    #c:/Users/47695661/Desktop/fastApi/venv/Scripts/Activate.ps1
+    #venv/Scripts/Activate.ps1v linea que hay que correr siempre que se prende
