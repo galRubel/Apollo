@@ -1,0 +1,5 @@
+pandas
+tensorflow
+fastapi
+uvicorn[standard]
+flask_cors
