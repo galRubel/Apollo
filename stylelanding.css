@@ -1,8 +1,11 @@
-
-
 .botones-infoycontacto{
     padding: 20px;
     text-align: center;
+}
+body{
+  background-image: url("App.svg");
+  align-items: center;
+
 }
 #objetivos{
  
@@ -15,11 +18,11 @@
  #cuadrado,
  #cuadrado2,
  #cuadrado1{
-        width: 300px; 
-        height: 300px; 
+        width: 200px; 
+        height: 200px; 
         box-shadow: 0 4px 8px 0 #A09C9C, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        background-color: #EBEBEB;
-        margin-top: 300px;
+        background-color: #F5F5F5;
+        margin-top: 30px;
     }
   
 
@@ -38,11 +41,11 @@ h2{
 header {
     padding: 20px;
     text-align: center;
-    background: #e8e8e8;
+    background: transparent;
     font-size: 30px;
     display: flex;
     justify-content: flex-end;
-    box-shadow: 0 4px 8px 0 #A09C9C, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 #A09C9C, 0 200px 6000px 0 rgba(0, 0, 0, 0.19);
 
 }
 
@@ -61,9 +64,9 @@ header {
 
 .button-login,
 .button-registrarse {
-    background-color: #e8e8e8;
+    background-color: transparent;
     border: 2px solid #FFA500;
-    color: black;
+    color: #F5F5F5;
     padding: 10px;
     text-align: center;
     text-decoration: none;
@@ -74,69 +77,28 @@ header {
     border-radius: 4px;
     margin-left: 20px;
 }
-.button-contacto,
-.button-info {
-    background-color: #F2F2F2;
-    border: 2px solid #A09C9C;
-    color: black;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 20px;
-    margin-bottom: 20px;
-    
-}
-
-
 .button-registrarse:hover,
 .button-login:hover {
     background-color: #FFA500;
-    color: white;
+    color: #F5F5F5;
 }
 .button-contacto:hover,
 .button-info:hover {
     background-color: #FFA500;
     border-color: #FFA500;
-    color: whitesmoke;
+    color:#F5F5F5;
 }
 
-.container {
-  position: relative;
-  background: #2c3e50;
-  height: 50vh;
+.col-md-4{
+  font-family: 'Italiana', serif;
+    color:black;
+    font-size: 40px;
+    padding-top: 0px;
+    padding-left: 20px;
+    text-align: center;
+    justify-content: center;
 }
-
-.wave {
-  position: absolute;
-  height: 207px;
-  width: 100%;
-  background: #2c3e50;
-  bottom: 0;
-}
-
-.wave::before, .wave::after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 100% 50%;
-}
-
-.wave::before {
-  width: 55%;
-  height: 109%;
-  background-color: #fff;
-  right: -1.5%;
-  top: 60%;
-}
-.wave::after {
-  width: 55%;
-  height: 100%;
-  background-color: #2c3e50;
-  left: -1.5%;
-  top: 40%;
+footer{
+  background-color: transparent;
+ height: 90px;
 }

@@ -9,7 +9,8 @@
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
 </head>
 
-<body>
+<body class="body">
+  <div id="formUno">
   <div id="caja">
   <h2 class="pregunta">¿Alguna vez tuviste riñones debiles?</h2>
   <div class="buttons">
@@ -48,6 +49,28 @@
       <button id="hola" type="submit">Siguiente</button> 
       <div class="underline"></div>    
     </div>
- 
+  </div>
+    <div class="container" id="formDos">
+      <div id="caja">
+      <h2 class="pregunta">Ingrese su fecha de nacimiento</h2>
+      <div class="fecha">
+      <input  type="date"  >
+      
+  </div>
+<div>
+  <h2 class="pregunta">¿Cuánto pesas en Kilogramos?</h2>
+  <input pattern="\d+"  class="input" placeholder="En Kg" class="peso">
+</div>
+<div>
+  <h2 class="pregunta">¿Cuánto medis en centimetros?</h2>
+  <input pattern="\d+" class="input" placeholder="En Cm" class="peso" >
+</div>
+<div>
+  <h2 class="pregunta">¿Cuánto veces por semana haces ejercicio?</h2>
+  <input pattern="\d+" class="input" placeholder="En Numeros" class="peso" >
+</div>
+<button id="guardar">Guardar</button>
+</div>
+</div>
 </body>
 </html>

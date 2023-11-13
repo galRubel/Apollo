@@ -1,6 +1,10 @@
 body {
   background-image: url("fondoForm.svg");
     align-items: center;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+  
   }
  .opciones{
 
@@ -23,7 +27,9 @@ body {
   margin-top: 20px;
   border-radius: 13px;
   box-shadow: 5px 10px 18px #916400;
+  
  }
+
 .pregunta{
   width: 100%;
     font-family: 'Raleway';
@@ -31,9 +37,8 @@ body {
     font-style: normal;
     font-weight: 400;
     color: #F3F3F3;
-    padding-bottom: 20px;  
     display: flex;
-    margin-bottom: 200px auto;
+    margin-bottom: 100x;
     margin-left: 200px;
    
   }
