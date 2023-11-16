@@ -50,7 +50,7 @@ header {
 }
 
   h2{
-    font-family: 'Italiana', serif;
+    font-family: 'Raleway';
     color:black;
     font-size: 50px;
     padding-top: 0px;
@@ -90,13 +90,13 @@ header {
 }
 
 .col-md-4{
-  font-family: 'Italiana', serif;
+    font-family: 'Raleway';
     color:black;
     font-size: 40px;
-    padding-top: 0px;
-    padding-left: 20px;
+    display: flex;
     text-align: center;
     justify-content: center;
+    align-items: center;
 }
 footer{
   background-color: transparent;

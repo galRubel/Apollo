@@ -1,5 +1,6 @@
 body {
   background-image: url("fondoForm.svg");
+  background-repeat: no-repeat;
   }
 .opciones{
   font-family: 'Raleway';
@@ -8,6 +9,7 @@ body {
   font-weight: 400;
   color: honeydew; 
  }
+
 #body{
   overflow-y: hidden;
 }
@@ -33,7 +35,6 @@ body {
   font-weight: 400;
   color: #F3F3F3;
   display: flex;
-  margin-bottom: 50px;
   margin-left: 90px;}
 .preguntaDos{
 
@@ -49,7 +50,9 @@ body {
   margin-left: 90px;
   width: 100%;
 }
-
+#formUno{
+  overflow: hidden;
+}
 .input-container {
   position: relative;
   margin: 20px auto;
@@ -260,7 +263,7 @@ input:focus {
   background-color: white;
 }
 
-#hola {
+.hola {
   font-size: 17px;
   padding: 0.5em 2em;
   border: transparent;
@@ -271,12 +274,12 @@ input:focus {
   border-radius: 4px;
  }
  
- #hola:hover {
+ .hola:hover {
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(255, 165, 0,1) 0%, rgba(255, 165, 0,1) 100%);
  }
  
- #hola:active {
+ .hola:active {
   transform: translate(0em, 0.2em);
  }
 
