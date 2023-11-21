@@ -45,28 +45,28 @@
 </div>
     <h2 class="pregunta">¿Cuántas veces pasaste piedras de riñón?</h2>
       <input pattern="\d+" class="input" placeholder="Del 1 al 80" id="peso">
-      <button id="hola" class="hola" type="submit">Siguiente</button> 
+      <button id="hola" class="hola" type="click"> Siguiente</button> 
       <div class="underline"></div>    
     </div>
   </div>
     <div class="container" id="formDos">
     <div id="caja">
-    <h2 class="preguntaDos">Ingrese su fecha de nacimiento</h2>
-    <div class="fecha"><input  type="date"  > </div>
+    <h2 class="preguntaDos">¿Cuandtod años tiene?</h2>
+    <input pattern="\d+"  class="input" placeholder="En Años" class="peso" id="fecha">
   <h2 class="preguntaDos">¿Cuánto pesas en Kilogramos?</h2>
-  <input pattern="\d+"  class="input" placeholder="En kg" class="peso">
+  <input pattern="\d+"  class="input" placeholder="En kg" class="peso" id="preguntaCuatro">
 
   <h2 class="preguntaDos">¿Cuánto medis en centimetros?</h2>
-  <input pattern="\d+" class="input" placeholder="En cm" class="peso" >
+  <input pattern="\d+" class="input" placeholder="En cm" class="peso" id="preguntaCinco">
   <h2 class="preguntaDos">¿Cuánto veces por semana haces ejercicio?</h2>
-  <input pattern="\d+" class="input" placeholder="En N°" class="peso" >
+  <input pattern="\d+" class="input" placeholder="En N°" class="peso" id="preguntaSeis">
 
-<button class="hola" id="guardar">Guardar</button>
+<button id="guardar" class="hola">Guardar</button>
 </div>
-</div>
+</div></body>
 <div id="formTres">
-<div>
 <div id="caja">
+<div id="preguntas">
 <h2 class="pregunta">¿En los últimos 5 días, cuántos de esos fumaste un cigarrillo?</h2>
 <div class="radio-inputs">
     <label>
@@ -120,8 +120,8 @@
     </label>
 </div>
 <h2 class="pregunta"> De los últimos 5 días que fumaste, ¿cuánto fumaste en promedio por día?</h2>
-  <input pattern="\d+"  class="input" placeholder="En Kg" class="peso">
-  <h2 class="pregunta">En los últimos 5 días, cuántos de esos tomaste alcohol??</h2>
+  <input pattern="\d+"  class="input" placeholder="En Kg" class="peso" id="preguntaSiete">
+  <h2 class="pregunta">En los últimos 5 días, cuántos de esos tomaste alcohol?</h2>
 <div class="radio-inputs">
     <label>
         <input checked="" class="radio-input" type="radio" name="segundo">
@@ -173,21 +173,27 @@
         </span>
     </label>
 </div>
-<h2 class="pregunta"> De los últimos 5 días, ¿Cuántos tragos tomaste en promedio cada día que tomaste? </h2>
-<input pattern="\d+"  class="input" placeholder="En N°" class="peso">  
-<button id="pantallaTres" class="hola" type="click">Hola</button> 
-<div class="formCuatro" id="formCuatro">
-    <h2 class="preguntaCuatro">¿Cuántas comidas en el último mes no fueron preparadas en casa o en el colegio/trabajo?</h2>
+    <h2 class="pregunta"> De los últimos 5 días que tomaste, ¿cuánto tomaste en promedio por día?</h2>
+    <input pattern="\d+"  class="input" placeholder="En N°" class="peso" id="tomaste">
+    <button id="pantallaTres" type="click"  class="hola">Siguiente</button>
+
+</div>
+</div>
+</div>
+<div id="formCuatro">
+<div id="caja">
+<h2 class="pregunta" id="preguntaOcho">¿Cuántas comidas en el último mes no fueron preparadas en casa o en el colegio/trabajo?</h2>
   <input pattern="\d+" class="input" placeholder="En cm" class="peso" >
-  <h2 class="preguntaCuatro">¿Cuántas comidas en el último mes fueron pedidas en comida rápida?</h2>
+  <h2 class="pregunta" id="preguntaNueve">¿Cuántas comidas en el último mes fueron pedidas en comida rápida?</h2>
   <input pattern="\d+" class="input" placeholder="En cm" class="peso" >
-  <h2 class="preguntaCuatro">¿Cuántas comidas en el último mes fueron compradas listas o casi listas?</h2>
+  <h2 class="pregunta" id="preguntaDiez">¿Cuántas comidas en el último mes fueron compradas listas o casi listas?</h2>
   <input pattern="\d+" class="input" placeholder="En N°" class="peso" >
-  <h2 class="preguntaCuatro">¿ Cuántas comidas en el último mes fueron compradas congeladas?</h2>
-  <input pattern="\d+" class="input" placeholder="En N°" class="peso" >
+  <h2 class="pregunta" id="preguntaOnce">¿ Cuántas comidas en el último mes fueron compradas congeladas?</h2>
+  <input pattern="\d+" class="input" placeholder="En N°" class="peso">
+
+    <button id="pantallaTres" class="hola" type="click"> Enviar</button>
 </div>
 </div>
+
 </div>
-</div>
-</body>
 </html>

@@ -8,7 +8,9 @@ CORS(app, resources={r"/*": {"origins": "http://localhost:8000"}})
 
 class IA:
     def __init__(self, model_path: str):
-        self.model = load_model(model_path)
+        self.model = load_model(
+    filepath, custom_objects=None, compile=True, safe_mode=True, **kwargs
+)
 
     def predecir(self, data):
         return self.model.predict(data).tolist()
@@ -48,6 +50,7 @@ def read_link():
     prediction2 = model2.predecir(data_input)
 
     return jsonify({"Prediction_Model_1": prediction1, "Prediction_Model_2": prediction2})
+    print(prediction1, prediction2)
 
     #data_input = pd.DataFrame(data_dict)
 

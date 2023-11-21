@@ -31,6 +31,7 @@ model user {
   comidaLista Int?
   comidaCongelada Int?
   creado  DateTime @default(now())
+  resultado?
 
   @@map("posts")
 }

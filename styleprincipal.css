@@ -9,7 +9,6 @@ margin-left:20px;
 display: flex;
 align-items: center;
 flex-direction: column;
-
 }
 body{
 background-color: black;
@@ -48,6 +47,10 @@ padding-left: 10PX;
     background: #A09C9C;
     display: flex;
 }
+.chart{
+    width: 540px;
+    height: 400px;
+}
 .grafico{
     width: 540px;
     height: 400px;
@@ -57,6 +60,31 @@ padding-left: 10PX;
     flex-direction: row;
     flex-wrap: nowrap;
 }
+.hola {
+    font-size: 17px;
+    padding: 0.5em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    background: #916400;
+    margin-top: 40px;
+    margin-left: 30px;
+    color: white;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+    height: 10px;
+   }
+   
+h2{
+    font-family: 'Raleway';
+    color:black;
+    font-size: 30px;
+    padding-top: 0px;
+    padding-left: 20px;
+  }
     .resultado{
     width: 540px;
     height: 400px;
@@ -64,6 +92,7 @@ padding-left: 10PX;
     background: #A09C9C ;
     display: flex;
     flex-direction: row;
+  
 }
 #fila{
     display: flex;

@@ -18,8 +18,8 @@ body{
  #cuadrado,
  #cuadrado2,
  #cuadrado1{
-        width: 200px; 
-        height: 200px; 
+        width: 150px; 
+        height: 150px; 
         box-shadow: 0 4px 8px 0 #A09C9C, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         background-color: #F5F5F5;
         margin-top: 30px;
