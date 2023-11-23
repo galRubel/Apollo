@@ -1,0 +1,105 @@
+Devlog
+
+
+Agosto
+
+* Investigue y probé redes neuronales convolucionales para clasificar imágenes.
+* Tuvimos la reunión con Maimonides y se destruye el proyecto.
+
+Septiembre
+
+* Decidimos hacer un proyecto de investigación usando NHANES
+* Decidimos hacer una predicción de cosas de la salud en base a hábitos del usuario
+* Nos ponemos a ver los datos y seleccionar los que nos interesan
+* Los pongo en un dataframe y lo dejo lindo
+* Lleno los NaN con valores promedio (mala idea)
+* Uso Linear Regression, no da
+* Uso Decision Tree Classifier, no da
+* Uso un modelo Sequential, no da
+* Hablo con mi mamá y nos dice que tenemos que predecir una única cosa porque cada aspecto de la salud estaba influido por cosas completamente diferentes y que investiguemos las causas de lo que elegimos
+* Elegimos presión sanguínea porque la presión elevada es un factor de riesgo común
+
+Octubre
+
+* Arranco a investigar las causas de la presión sanguínea elevada y las verifico con mi mamá
+* Exploro de nuevo los datos y selecciono los relacionados
+* Los pongo en un dataframe lindo
+* Reemplazo los NaNs por -1
+* Uso Linear Regression, no da
+* Uso Decision Tree Classifier, no da
+* Uso Sequential, no da
+* Hago One-Hot encoding al modelo Sequential, ahora da
+* Reduzco la cantidad de neuronas para que no se perfeccione demasiado con los datos de entrenamiento
+* Hago el código que hace la predicción, agarra las entradas del Front, les hace One-Hot Encoding, se las manda a la IA y obtiene las 2 salidas
+* Le meto dropout, lo empeora así que lo saco
+
+Noviembre
+
+* Pruebo XGBoost, es peor así que no lo uso
+* Hago la presentación
+
+
+Documentación
+
+
+La IA se encarga de predecir la presión sistólica y diastólica del usuario. La sistólica es la fuerza que realiza la sangre contra la pared de las arterias durante la sístole, que es cuando se contrae el corazón. La diástole es la fuerza realizada cuando se relaja. Para determinar los atributos de entrada tuvimos en cuenta las siguientes causas de la presión sanguínea elevada:
+
+* Edad: A partir de los 25 años, aumenta el riesgo de tener presión alta.
+* Sedentarismo: La falta de movimiento hace que el corazón y las arterias sufran trastornos irreparables. Las arterias se tapan por el cúmulo de placas de grasa, lo que las tapa, creando una ateromatosis.
+* Alimentación: Una mala alimentación también lleva a una ateromatosis.
+* Consumo de tabaco y alcohol: También producen ateromatosis.
+* Obesidad: Consecuencia de una mala alimentación. Se determina por la altura y el peso.
+* Salud de los riñones: Va de la mano con la presión sanguínea.
+
+Del front se reciben las siguientes 15 entradas:
+
+Demografía
+* Edad: Edad en meses de la persona, numérico. 
+Peso y altura
+* Altura: Altura en pulgadas, numérico. 
+* Peso: Peso en pounds, numérico. 
+Riñones
+* Débiles: ¿Alguna vez te dijeron que tenés riñones débiles? Categórico.
+   * 1 → Sí
+   * 2 → No
+* Diálisis: ¿Alguna vez recibió diálisis? Categórico.
+   * 1 → Sí
+   * 2 → No
+* Piedras: ¿Cuántas veces pasaste una piedra de riñón? Numérico.
+Actividad física
+* Ejercicio: Cantidad de veces a la semana que se va a hacer ejercicio. Numérico. 
+Tabaco
+* Días cigarrillos: De los últimos 5 días, cuántos de esos fumaste un cigarrillo? Numérico.
+* Cigarrillos/d: De los últimos 5 días, ¿cuántos cigarrillos fumaste en promedio cada día que fumaste? Numérico.
+Alcohol
+* Días alcohol: De los últimos 5 días, cuántos de esos tomaste alcohol? Numérico.
+* Alcohol/d: De los últimos 5 días, ¿Cuántos tragos tomaste en promedio cada día que tomaste? Numérico.
+Dieta
+* Comida no casera: Cuántas comidas en el último mes no fueron preparadas en casa o en el colegio/trabajo. Numérico.
+* Comida rápida: Cuántas comidas en el último mes fueron pedidas en comida rápida. Numérico.
+* Comida lista: Cuántas comidas en el último mes fueron compradas listas o casi listas para su consumo (ej, una lata de fideos que pones en el microondas). Numérico.
+* Comida congelada: Cuántas comidas en el último mes fueron compradas congeladas (ej, pizza congelada). Numérico.
+
+Tras eso, se realiza el One-Hot Encoding a los atributos categóricos. Esto hace que en vez de que haya un único atributo con un valor correspondiente a una categoria, haya uno por categoría que tenga un valor de 0 o 1 dependiendo de si la persona está en esa categoría o no. Esto se hace para mejorar la precisión de la IA:
+
+* El atributo ‘Débiles’ se descompone en los siguientes atributos:
+   * ‘Débiles_-1’ para gente que no respondió. Este era necesario para entrenar a la IA ya que había gente que no respondió, pero a la hora de hacer la predicción, tendra siempre un valor de 0 ya que el Front obliga al usuario a llenar todo.
+   * ‘Débiles_1’ para gente que tuvo riñones débiles.
+   * ‘Débiles_2’ para gente que no tuvo riñones débiles.
+   * ‘Débiles_9’, este también es para gente que no respondió. Existe por un error, es un clon de ‘Débiles_-1’, pero nos dimos cuenta cuando el proyecto ya estaba avanzado, y como no molestaba y sacarlo suponía un trabajo innecesario, lo dejamos. Su valor será siempre 0.
+
+* El atributo ‘Dialisis’ se descompone en los siguientes atributos:
+   * ‘Diálisis_-1’ para gente que no respondió. Este era necesario para entrenar a la IA ya que había gente que no respondió, pero a la hora de hacer la predicción, tendra siempre un valor de 0 ya que el Front obliga al usuario a llenar todo.
+   * ‘Diálisis_1’ para gente que recibió diálisis.
+   * ‘Diálisis_2’ para gente que no recibió diálisis.
+
+Luego de este proceso, tenemos 20 entradas que van en la capa de entrada de nuestro IA que usa 2 modelos Sequential de Tensorflow (uno por cada salida), cada uno de los 2 compuesto de la siguiente forma:
+
+* 1 capa de entrada de 20 neuronas con activación ‘relu’.
+* 2 capas ocultas de 16 neuronas con activación ‘relu’.
+* 2 capas ocultas de 8 neuronas con activación ‘relu’.
+* 2 capas ocultas de 4 neuronas con activación ‘relu’.
+* 2 capas ocultas de 2 neuronas con activación ‘relu’.
+* 1 capa de salida de 1 neurona.
+
+Finalmente, las 2 salidas obtenidas por ambos modelos son enviadas al Front.
